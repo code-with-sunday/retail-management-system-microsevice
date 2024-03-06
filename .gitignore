@@ -16,7 +16,11 @@
 ### IntelliJ IDEA ###
 .idea/
 
-
+discovery-server.iml
+inventory-service.iml
+microservice-store.iml
+order-service.iml
+product-service.iml
 #### Eclipse ###
 #.apt_generated
 #.classpath
