@@ -12,8 +12,8 @@
 #*.iml
 #*.ipr
 
-### IntelliJ IDEA ###
-.idea/
+#### IntelliJ IDEA ###
+#.idea/
 #
 #### Eclipse ###
 #.apt_generated
