@@ -1,7 +1,10 @@
 package com.ochefitech.orderservice.config;
 
+import io.micrometer.observation.Observation;
+import io.micrometer.observation.ObservationRegistry;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.KafkaTemplate;
 
@@ -19,5 +22,31 @@ public class ManualConfiguration {
     void setup() {
         this.kafkaTemplate.setObservationEnabled(true);
     }
+
+    @Bean
+    public ObservationRegistry observationRegistry() {
+        return new ObservationRegistry() {
+            @Override
+            public Observation getCurrentObservation() {
+                return null;
+            }
+
+            @Override
+            public Observation.Scope getCurrentObservationScope() {
+                return null;
+            }
+
+            @Override
+            public void setCurrentObservationScope(Observation.Scope scope) {
+
+            }
+
+            @Override
+            public ObservationConfig observationConfig() {
+                return null;
+            }
+        }; // Customize this based on your requirements.
+    }
+
 
 }
